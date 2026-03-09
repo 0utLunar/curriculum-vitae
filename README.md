@@ -8,8 +8,8 @@ Currículos profissionais desenvolvidos em HTML puro, com alternância de idioma
 
 | Arquivo | Descrição |
 |---|---|
-| `curriculo_lucas_cirino.html` | Currículo voltado para **Desenvolvimento de Software** |
-| `curriculo_lucas_cirino_eletro.html` | Currículo voltado para **Técnico em Eletromecânica** |
+| `developer.html` | Currículo voltado para **Desenvolvimento de Software** |
+| `eletromechanics.html` | Currículo voltado para **Técnico em Eletromecânica** |
 
 ---
 
