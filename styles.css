@@ -1,0 +1,204 @@
+:root {
+  --bg: #faf9f7;
+  --text: #1a1916;
+  --accent: #2a4d8f;
+  --muted: #666058;
+  --border: #d8d4cc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.lang-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--text);
+  display: flex;
+  justify-content: center;
+}
+
+.lang-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  color: #888;
+  padding: 9px 26px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+
+.lang-btn.active { color: #faf9f7; background: var(--accent); }
+.lang-btn:hover:not(.active) { color: #faf9f7; }
+
+.print-btn,
+.print-btn-compact {
+  position: fixed;
+  right: 22px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+  padding: 6px 14px;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 0.2s;
+}
+
+.print-btn { top: 38px; }
+.print-btn-compact { top: 64px; }
+
+.print-btn:hover,
+.print-btn-compact:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+.page {
+  max-width: 900px;
+  margin: 60px auto 30px;
+  background: var(--bg);
+  padding: 44px 52px;
+}
+
+header { border-bottom: 2px solid var(--text); margin-bottom: 18px; padding-bottom: 16px; }
+header h1 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  line-height: 1.15;
+}
+.subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.contacts a { color: var(--accent); text-decoration: none; }
+.contacts a:hover { text-decoration: underline; }
+.contacts span:not(:first-child)::before,
+.contacts a:not(:first-child)::before {
+  content: "·";
+  margin: 0 9px 0 5px;
+  color: var(--border);
+}
+
+section { margin-bottom: 16px; }
+.section-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.summary p { font-size: 14px; line-height: 1.75; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 6px 14px;
+}
+.skill-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 2px;
+}
+.skill-value { font-size: 13px; }
+
+.job { margin-bottom: 12px; }
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.job-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 700;
+  font-size: 14.5px;
+}
+.job-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.job-company { font-size: 12.5px; color: var(--accent); margin-bottom: 3px; }
+.job-company a { color: var(--accent); text-decoration: none; }
+.job-company a:hover { text-decoration: underline; }
+.job ul { padding-left: 20px; margin-top: 3px; }
+.job li { font-size: 13px; margin-bottom: 3px; }
+.job + .job { padding-top: 8px; }
+
+strong { color: var(--text); }
+
+@media print {
+  .lang-bar, .print-btn, .print-btn-compact { display: none !important; }
+  body { background: #fff; }
+  .page { margin: 0; max-width: 100%; }
+  a { text-decoration: none; }
+  .contacts a { color: var(--accent); }
+  .job { page-break-inside: avoid; }
+
+  body.print-compact { font-size: 11.5px; }
+  body.print-compact .page { padding: 9mm 14mm 8mm; }
+  body.print-compact header { margin-bottom: 11px; padding-bottom: 10px; }
+  body.print-compact header h1 { font-family: 'EB Garamond', Georgia, serif; font-size: 1.9rem; }
+  body.print-compact .subtitle { font-size: 9px; margin-bottom: 8px; }
+  body.print-compact .contacts { font-size: 11px; }
+  body.print-compact section { margin-bottom: 11px; }
+  body.print-compact .section-title { font-size: 8.5px; margin-bottom: 8px; padding-bottom: 4px; }
+  body.print-compact .job { margin-bottom: 9px; }
+  body.print-compact .job + .job { padding-top: 9px; }
+  body.print-compact .job-company { margin-bottom: 3px; font-size: 11px; }
+  body.print-compact .job-title { font-family: 'EB Garamond', Georgia, serif; font-size: 12px; }
+  body.print-compact .job-date { font-size: 10px; }
+  body.print-compact .summary p,
+  body.print-compact .skill-value,
+  body.print-compact .job li { font-size: 11.3px; line-height: 1.55; }
+  body.print-compact .skill-label { font-size: 8.5px; }
+  body.print-compact .skills-grid { gap: 5px 0; grid-template-columns: 120px 1fr; }
+
+  body:not(.print-compact) { font-size: 12.8px; }
+  body:not(.print-compact) .page { padding: 8mm 16mm 8mm; }
+  body:not(.print-compact) header { margin-bottom: 12px; padding-bottom: 10px; }
+  body:not(.print-compact) header h1 { font-family: 'EB Garamond', Georgia, serif; font-size: 2.15rem; }
+  body:not(.print-compact) .subtitle { font-size: 10px; margin-bottom: 7px; }
+  body:not(.print-compact) .contacts { font-size: 12px; }
+  body:not(.print-compact) section { margin-bottom: 11px; }
+  body:not(.print-compact) .section-title { font-size: 9px; margin-bottom: 8px; padding-bottom: 4px; }
+  body:not(.print-compact) .job { margin-bottom: 9px; page-break-inside: avoid; }
+  body:not(.print-compact) .job + .job { padding-top: 8px; }
+  body:not(.print-compact) .job-company { margin-bottom: 3px; font-size: 12px; }
+  body:not(.print-compact) .job-title { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; }
+  body:not(.print-compact) .job-date { font-size: 10.5px; }
+  body:not(.print-compact) .summary p,
+  body:not(.print-compact) .skill-value,
+  body:not(.print-compact) .job li { font-size: 12.2px; line-height: 1.6; }
+}

@@ -1,257 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-en-title="Lucas Cirino – Resume">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lucas Cirino – Desenvolvedor</title>
+  <title>Lucas Cirino – Currículo</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg: #faf9f7;
-      --text: #1a1916;
-      --accent: #2a4d8f;
-      --muted: #666058;
-      --border: #d8d4cc;
-      --tag-bg: #eeeae3;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14.5px;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    .lang-bar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--text);
-      display: flex;
-      justify-content: center;
-    }
-
-    .lang-btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: none;
-      background: transparent;
-      color: #888;
-      padding: 9px 26px;
-      cursor: pointer;
-      transition: color 0.2s, background 0.2s;
-    }
-
-    .lang-btn.active { color: #faf9f7; background: var(--accent); }
-    .lang-btn:hover:not(.active) { color: #faf9f7; }
-
-    .print-btn {
-      position: fixed;
-      top: 38px;
-      right: 22px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--muted);
-      padding: 6px 14px;
-      cursor: pointer;
-      z-index: 99;
-      transition: all 0.2s;
-    }
-
-    .print-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-    .print-btn-compact {
-      position: fixed;
-      top: 64px;
-      right: 22px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--muted);
-      padding: 6px 14px;
-      cursor: pointer;
-      z-index: 99;
-      transition: all 0.2s;
-    }
-
-    .print-btn-compact:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-    .page {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 70px 44px 60px;
-    }
-
-    header {
-      text-align: center;
-      padding-bottom: 18px;
-      border-bottom: 2px solid var(--text);
-      margin-bottom: 22px;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-family: 'DM Mono', monospace;
-      font-size: 10.5px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .contacts {
-      font-size: 12.5px;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 4px 16px;
-    }
-
-    .contacts a { color: var(--accent); text-decoration: none; }
-    .contacts a:hover { text-decoration: underline; }
-
-    section { margin-bottom: 18px; }
-
-    .section-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 9.5px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 5px;
-      margin-bottom: 12px;
-    }
-
-    .summary p { font-size: 14px; line-height: 1.75; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 6px 0;
-      align-items: start;
-    }
-
-    .skill-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 9.5px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 2px;
-    }
-
-    .skill-value { font-size: 14px; }
-
-    .job { margin-bottom: 14px; }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 3px;
-      margin-bottom: 1px;
-    }
-
-    .job-title { font-weight: 700; font-size: 14.5px; }
-
-    .job-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 10.5px;
-      color: var(--muted);
-    }
-
-    .job-company {
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 5px;
-      font-size: 13px;
-    }
-
-    .job ul { padding-left: 16px; }
-
-    .job li {
-      margin-bottom: 3px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .job + .job {
-      border-top: 1px dashed var(--border);
-      padding-top: 13px;
-    }
-
-    strong { font-weight: 700; }
-
-    @media print {
-      .lang-bar, .print-btn, .print-btn-compact { display: none !important; }
-      body { background: #fff; }
-      .page { max-width: 100%; }
-    }
-
-    body.print-compact { --print-active: 1; }
-
-    @media print {
-      body.print-compact { font-size: 11.5px; }
-      body.print-compact .page { padding: 9mm 14mm 8mm; }
-      body.print-compact header { margin-bottom: 11px; padding-bottom: 10px; }
-      body.print-compact header h1 { font-size: 1.9rem; }
-      body.print-compact .subtitle { font-size: 9px; margin-bottom: 8px; }
-      body.print-compact .contacts { font-size: 11px; }
-      body.print-compact section { margin-bottom: 11px; }
-      body.print-compact .section-title { font-size: 8.5px; margin-bottom: 8px; padding-bottom: 4px; }
-      body.print-compact .job { margin-bottom: 8px; }
-      body.print-compact .job + .job { padding-top: 8px; }
-      body.print-compact .job-company { margin-bottom: 3px; font-size: 11px; }
-      body.print-compact .job-title { font-size: 12px; }
-      body.print-compact .job-date { font-size: 10px; }
-      body.print-compact .summary p,
-      body.print-compact .skill-value,
-      body.print-compact .job li { font-size: 11px; line-height: 1.5; }
-      body.print-compact .skill-label { font-size: 8.5px; }
-      body.print-compact .skills-grid { gap: 5px 0; grid-template-columns: 120px 1fr; }
-
-      body:not(.print-compact) { font-size: 13px; }
-      body:not(.print-compact) .page { padding: 10mm 16mm 10mm; }
-      body:not(.print-compact) header { margin-bottom: 14px; padding-bottom: 12px; }
-      body:not(.print-compact) header h1 { font-size: 2.2rem; }
-      body:not(.print-compact) .subtitle { font-size: 10px; margin-bottom: 9px; }
-      body:not(.print-compact) .contacts { font-size: 12px; }
-      body:not(.print-compact) section { margin-bottom: 14px; }
-      body:not(.print-compact) .section-title { font-size: 9px; margin-bottom: 9px; padding-bottom: 5px; }
-      body:not(.print-compact) .job { margin-bottom: 11px; page-break-inside: avoid; }
-      body:not(.print-compact) .job + .job { padding-top: 10px; }
-      body:not(.print-compact) .job-company { margin-bottom: 3px; font-size: 12px; }
-      body:not(.print-compact) .job-title { font-size: 13px; }
-      body:not(.print-compact) .job-date { font-size: 10.5px; }
-      body:not(.print-compact) .summary p,
-      body:not(.print-compact) .skill-value,
-      body:not(.print-compact) .job li { font-size: 12px; line-height: 1.6; }
-      body:not(.print-compact) .skill-label { font-size: 9px; }
-      body:not(.print-compact) .skills-grid { gap: 6px 0; grid-template-columns: 130px 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -282,10 +36,10 @@
   <section class="summary">
     <div class="section-title" data-pt="Resumo Profissional" data-en="Professional Summary">Resumo Profissional</div>
     <p class="pt-content">
-      Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (FATEC Americana, conclusão Dez/2027), com <strong>Técnico em ADS</strong> — Centro Paula Souza — e <strong>Técnico em Eletromecânica</strong> — SENAI. Experiência em <strong>suporte técnico</strong> com <strong>acesso remoto</strong> e projetos próprios em <strong>produção</strong> com <strong>ASP.NET/C#</strong>, <strong>Python</strong> e <strong>SQL</strong>. Comunicativo, organizado e orientado à <strong>resolução de problemas</strong>.
+      Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> (FATEC Americana, conclusão Dez/2027), com <strong>Técnico em ADS</strong> — Centro Paula Souza — e <strong>Técnico em Eletromecânica</strong> — SENAI. Produzo projetos próprios com <strong>Java</strong>, <strong>ASP.NET/C#</strong>, <strong>Python</strong> e <strong>SQL</strong>, e também com <strong>React/TypeScript</strong> e <strong>Kotlin/Android</strong>. Comunicativo, organizado e orientado à <strong>resolução de problemas</strong>. <strong>Inglês B2 (TOEIC 900)</strong>.
     </p>
     <p class="en-content" style="display:none">
-      Systems Analysis and Development student at <strong>FATEC Americana</strong> (expected Dec/2027), with a <strong>Technical Degree in ADS</strong> — Centro Paula Souza — and a <strong>Technician in Electromechanics</strong> — SENAI. Experienced in <strong>technical support</strong>, <strong>remote access</strong>, and personal projects <strong>deployed to production</strong> using <strong>ASP.NET/C#</strong>, <strong>Python</strong>, and <strong>SQL</strong>. Communicative, organized, and driven by <strong>problem-solving</strong>.
+      Systems Analysis and Development student at <strong>FATEC Americana</strong> (expected Dec/2027), with a <strong>Technical Degree in ADS</strong> — Centro Paula Souza — and a <strong>Technician in Electromechanics</strong> — SENAI. I build personal projects with <strong>Java</strong>, <strong>ASP.NET/C#</strong>, <strong>Python</strong>, and <strong>SQL</strong>, and also with <strong>React/TypeScript</strong> and <strong>Kotlin/Android</strong>. Communicative, organized, and driven by <strong>problem-solving</strong>. <strong>English B2 (TOEIC 900)</strong>.
     </p>
   </section>
 
@@ -294,31 +48,44 @@
     <div class="skills-grid">
 
       <span class="skill-label" data-pt="Linguagens" data-en="Languages">Linguagens</span>
-      <span class="skill-value"><strong>Java</strong> · <strong>Python</strong> · <strong>C#</strong> · <strong>JavaScript</strong> · HTML · CSS</span>
+      <span class="skill-value pt-content"><strong>Java</strong> · <strong>Python</strong> · <strong>C#</strong> · <strong>JavaScript</strong> · HTML · CSS · TypeScript · Kotlin</span>
+      <span class="skill-value en-content" style="display:none"><strong>Java</strong> · <strong>Python</strong> · <strong>C#</strong> · <strong>JavaScript</strong> · HTML · CSS · TypeScript · Kotlin</span>
 
       <span class="skill-label" data-pt="Frameworks" data-en="Frameworks">Frameworks</span>
-      <span class="skill-value"><strong>ASP.NET Web Forms</strong> · .NET Framework · <strong>Bootstrap</strong></span>
+      <span class="skill-value pt-content"><strong>ASP.NET (C#)</strong> · .NET · <strong>Bootstrap</strong> · React · Tailwind CSS · Firebase</span>
+      <span class="skill-value en-content" style="display:none"><strong>ASP.NET (C#)</strong> · .NET · <strong>Bootstrap</strong> · React · Tailwind CSS · Firebase</span>
 
       <span class="skill-label" data-pt="Banco de Dados" data-en="Databases">Banco de Dados</span>
-      <span class="skill-value"><strong>MySQL</strong> · <strong>SQL Server</strong></span>
+      <span class="skill-value pt-content"><strong>MySQL</strong> · <strong>SQL Server</strong> · Firestore · PostgreSQL / Supabase <span style="color:var(--muted)">(estudando)</span></span>
+      <span class="skill-value en-content" style="display:none"><strong>MySQL</strong> · <strong>SQL Server</strong> · Firestore · PostgreSQL / Supabase <span style="color:var(--muted)">(learning)</span></span>
 
       <span class="skill-label" data-pt="Ferramentas" data-en="Tools">Ferramentas</span>
-      <span class="skill-value pt-content"><strong>Git / GitHub</strong> · Pacote Office · Photoshop · Premiere</span>
-      <span class="skill-value en-content" style="display:none"><strong>Git / GitHub</strong> · Microsoft Office · Photoshop · Premiere</span>
+      <span class="skill-value pt-content"><strong>Git / GitHub</strong> · Pacote Office</span>
+      <span class="skill-value en-content" style="display:none"><strong>Git / GitHub</strong> · Microsoft Office</span>
 
       <span class="skill-label" data-pt="Idiomas" data-en="Spoken Languages">Idiomas</span>
       <span class="skill-value pt-content">Português nativo · <strong>Inglês B2 (TOEIC 900)</strong></span>
       <span class="skill-value en-content" style="display:none">Portuguese native · <strong>English B2 (TOEIC 900)</strong></span>
 
-      <span class="skill-label" data-pt="Certificações" data-en="Certifications">Certificações</span>
-      <span class="skill-value pt-content"><strong>Cibersegurança – CISCO</strong> (6h · Abr/2024) · Inglês – FISK SBO (240h · em andamento)</span>
-      <span class="skill-value en-content" style="display:none"><strong>Cybersecurity – CISCO</strong> (6h · Apr/2024) · English – FISK SBO (240h · in progress)</span>
-
     </div>
   </section>
 
   <section>
-    <div class="section-title" data-pt="Experiência Profissional" data-en="Professional Experience">Experiência Profissional</div>
+    <div class="section-title" data-pt="Experiência &amp; Projetos" data-en="Experience &amp; Projects">Experiência &amp; Projetos</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title" data-pt="Estagiário – Suporte Técnico (PROATI)" data-en="Intern – Technical Support (PROATI)">Estagiário – Suporte Técnico (PROATI)</span>
+        <span class="job-date" data-pt="Mai/2026 – Atual" data-en="May/2026 – Present">Mai/2026 – Atual</span>
+      </div>
+      <div class="job-company" data-pt="E.E. Prof. Ary Menegatto · Educação Pública Estadual · Americana, SP" data-en="E.E. Prof. Ary Menegatto · State Public Education · Americana, SP">E.E. Prof. Ary Menegatto · Educação Pública Estadual · Americana, SP</div>
+      <ul>
+        <li class="pt-content"><strong>Suporte técnico</strong> a <strong>rede escolar</strong> com <strong>100+ equipamentos</strong> (notebooks, tablets, TVs): <strong>configuração de notebooks</strong>, <strong>conectividade de tablets</strong> e problemas de <strong>HDMI</strong> nas salas.</li>
+        <li class="en-content" style="display:none"><strong>Technical support</strong> for a <strong>school network</strong> with <strong>100+ devices</strong> (notebooks, tablets, TVs): <strong>notebook setup</strong>, <strong>tablet connectivity</strong>, and <strong>HDMI</strong> issues in classrooms.</li>
+        <li class="pt-content">Suporte a <strong>plataformas educacionais</strong> (<strong>SED</strong>, Sala do Futuro, <strong>CMSP</strong>): login, acesso e suporte a <strong>estudantes e professores</strong>; organização e <strong>controle</strong> dos carrinhos de equipamentos.</li>
+        <li class="en-content" style="display:none">Support for <strong>educational platforms</strong> (<strong>SED</strong>, Sala do Futuro, <strong>CMSP</strong>): logins, access, and help for <strong>students and teachers</strong>; organizing and <strong>tracking</strong> equipment carts.</li>
+      </ul>
+    </div>
 
     <div class="job">
       <div class="job-header">
@@ -336,90 +103,65 @@
 
     <div class="job">
       <div class="job-header">
-        <span class="job-title" data-pt="Jovem Aprendiz" data-en="Young Apprentice">Jovem Aprendiz</span>
-        <span class="job-date" data-pt="Jan/2024 – Dez/2024" data-en="Jan/2024 – Dec/2024">Jan/2024 – Dez/2024</span>
-      </div>
-      <div class="job-company" data-pt="EDEX Confecções LTDA · Indústria Têxtil · Americana, SP" data-en="EDEX Confecções LTDA · Textile Industry · Americana, SP">EDEX Confecções LTDA · Indústria Têxtil · Americana, SP</div>
-      <ul>
-        <li class="pt-content">Programa de <strong>jovem aprendiz</strong> com formação técnica simultânea no <strong>SENAI Americana</strong>; desenvolvimento de <strong>comunicação</strong>, <strong>organização</strong> e habilidades profissionais no ambiente corporativo.</li>
-        <li class="en-content" style="display:none"><strong>Young Apprentice</strong> program with concurrent technical training at <strong>SENAI Americana</strong>; developed <strong>communication</strong>, <strong>organization</strong>, and professional skills in a corporate setting.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-header">
         <span class="job-title">
           Rebenta Lanches
-          <span class="pt-content" style="font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Projeto Próprio</span>
-          <span class="en-content" style="display:none;font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Personal Project</span>
+          <span class="pt-content" style="font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Projeto Acadêmico (Grupo)</span>
+          <span class="en-content" style="display:none;font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Academic Project (Team)</span>
         </span>
         <span class="job-date">
-          <a href="https://rebentaburguer.somee.com" target="_blank" style="color:var(--accent);text-decoration:none">rebentaburguer.somee.com</a>
-          &thinsp;·&thinsp;
           <a href="https://github.com/0utLunar/rebentalanches" target="_blank" style="color:var(--accent);text-decoration:none">GitHub</a>
         </span>
       </div>
       <ul>
-        <li class="pt-content"><strong>Sistema web completo</strong> para lanchonete: <strong>cardápio dinâmico</strong>, <strong>sistema de pedidos</strong> e <strong>painel administrativo</strong> — <strong>ASP.NET (C#)</strong>, <strong>SQL Server</strong>, Bootstrap. <strong>Deploy em produção</strong> via Somee.</li>
-        <li class="en-content" style="display:none"><strong>Full-stack web system</strong> for a burger joint: <strong>dynamic menu</strong>, <strong>order system</strong>, and <strong>admin panel</strong> — <strong>ASP.NET (C#)</strong>, <strong>SQL Server</strong>, Bootstrap. <strong>Deployed to production</strong> on Somee.</li>
+        <li class="pt-content"><strong>Sistema web completo</strong> para lanchonete: <strong>cardápio dinâmico</strong>, <strong>sistema de pedidos</strong> e <strong>painel administrativo</strong> — <strong>ASP.NET (C#)</strong>, <strong>SQL Server</strong>, Bootstrap.</li>
+        <li class="en-content" style="display:none"><strong>Full-stack web system</strong> for a burger joint: <strong>dynamic menu</strong>, <strong>order system</strong>, and <strong>admin panel</strong> — <strong>ASP.NET (C#)</strong>, <strong>SQL Server</strong>, Bootstrap.</li>
+        <li class="pt-content"><span style="color:var(--muted);font-style:italic">Desenvolvido em grupo na FATEC.</span></li>
+        <li class="en-content" style="display:none"><span style="color:var(--muted);font-style:italic">Built in a team at FATEC.</span></li>
       </ul>
     </div>
 
     <div class="job">
       <div class="job-header">
         <span class="job-title">
-          Parkvision
-          <span class="pt-content" style="font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · TCC SENAI</span>
-          <span class="en-content" style="display:none;font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · SENAI Final Project</span>
+          Ratebit
+          <span class="pt-content" style="font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Projeto Acadêmico (Grupo)</span>
+          <span class="en-content" style="display:none;font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Academic Project (Team)</span>
         </span>
         <span class="job-date">
-          <a href="https://parkvision-sigma.vercel.app" target="_blank" style="color:var(--accent);text-decoration:none">parkvision-sigma.vercel.app</a>
-          &thinsp;·&thinsp;
-          <a href="https://github.com/0utLunar/Parkvision" target="_blank" style="color:var(--accent);text-decoration:none">GitHub</a>
+          <a href="https://github.com/Arthur-Manzatto/ratebit" target="_blank" style="color:var(--accent);text-decoration:none">GitHub</a>
         </span>
       </div>
       <ul>
-        <li class="pt-content"><strong>Monitoramento de estacionamentos</strong> via <strong>câmeras de segurança</strong> com <strong>detecção de vagas em tempo real</strong> — Python, PHP, MySQL. Hospedado na <strong>Vercel</strong>.</li>
-        <li class="en-content" style="display:none"><strong>Parking monitoring system</strong> using <strong>security cameras</strong> with <strong>real-time vacancy detection</strong> — Python, PHP, MySQL. Hosted on <strong>Vercel</strong>.</li>
+        <li class="pt-content">Rede social de <strong>avaliação de jogos</strong> no <strong>Android</strong>: autenticação, <strong>avaliação por estrelas</strong>, favoritos e perfil customizável — <strong>Kotlin</strong>, <strong>Firebase Firestore</strong>, Material Design 3.</li>
+        <li class="en-content" style="display:none">Social app for <strong>rating games</strong> on <strong>Android</strong>: authentication, <strong>star ratings</strong>, favorites, and customizable profiles — <strong>Kotlin</strong>, <strong>Firebase Firestore</strong>, Material Design 3.</li>
+        <li class="pt-content"><span style="color:var(--muted);font-style:italic">Desenvolvido em grupo na FATEC com assistência de agentes de IA.</span></li>
+        <li class="en-content" style="display:none"><span style="color:var(--muted);font-style:italic">Built in a team at FATEC with AI-agent assistance.</span></li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">
+          Reserva de Equipamentos
+          <span class="pt-content" style="font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Projeto Próprio</span>
+          <span class="en-content" style="display:none;font-weight:400;font-style:italic;font-size:12.5px;color:var(--muted)"> · Personal Project</span>
+        </span>
+        <span class="job-date">
+          <a href="https://github.com/0utLunar/reserva-equipamentos" target="_blank" style="color:var(--accent);text-decoration:none">GitHub</a>
+        </span>
+      </div>
+      <ul>
+        <li class="pt-content"><strong>Reserva de equipamentos e salas</strong> escolares: <strong>auth própria</strong> (hash <strong>PBKDF2</strong>, <em>rate-limit</em>), <strong>auditoria</strong> e exportação <strong>XLSX/PDF</strong> — <strong>React + Firebase/Firestore</strong>.</li>
+        <li class="en-content" style="display:none">School <strong>equipment and room booking</strong>: custom <strong>auth</strong> (<strong>PBKDF2</strong> hashing, <em>rate limiting</em>), <strong>audit logs</strong>, and <strong>XLSX/PDF</strong> export — <strong>React + Firebase/Firestore</strong>.</li>
+        <li class="pt-content"><span style="color:var(--muted);font-style:italic">Desenvolvido com assistência de agentes de IA.</span></li>
+        <li class="en-content" style="display:none"><span style="color:var(--muted);font-style:italic">Developed with AI-agent assistance.</span></li>
       </ul>
     </div>
 
   </section>
 
 </div>
-
-<script>
-  function printNormal() {
-    document.body.classList.remove('print-compact');
-    window.print();
-  }
-
-  function printCompact() {
-    document.body.classList.add('print-compact');
-    window.print();
-    setTimeout(() => document.body.classList.remove('print-compact'), 1000);
-  }
-
-  function setLang(lang) {
-    // Só troca elementos sem filhos HTML (evita apagar <strong>)
-    document.querySelectorAll('[data-pt]').forEach(el => {
-      if (el.children.length === 0) {
-        const val = el.getAttribute('data-' + lang);
-        if (val) el.textContent = val;
-      }
-    });
-    document.querySelectorAll('.pt-content').forEach(el => el.style.display = lang === 'pt' ? '' : 'none');
-    document.querySelectorAll('.en-content').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active',
-        (lang === 'pt' && btn.textContent.includes('Português')) ||
-        (lang === 'en' && btn.textContent.includes('English'))
-      );
-    });
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-    document.title = lang === 'pt' ? 'Lucas Cirino – Currículo' : 'Lucas Cirino – Resume';
-  }
-</script>
+  <script src="app.js" defer></script>
 
 </body>
 </html>

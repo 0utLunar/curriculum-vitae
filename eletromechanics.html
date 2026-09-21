@@ -1,260 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-en-title="Lucas Cirino – Electromechanical Technician">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lucas Cirino – Técnico em Eletromecânica</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg: #faf9f7;
-      --text: #1a1916;
-      --accent: #2a4d8f;
-      --muted: #666058;
-      --border: #d8d4cc;
-      --tag-bg: #eeeae3;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14.5px;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    .lang-bar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--text);
-      display: flex;
-      justify-content: center;
-    }
-
-    .lang-btn {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      border: none;
-      background: transparent;
-      color: #888;
-      padding: 9px 26px;
-      cursor: pointer;
-      transition: color 0.2s, background 0.2s;
-    }
-
-    .lang-btn.active { color: #faf9f7; background: var(--accent); }
-    .lang-btn:hover:not(.active) { color: #faf9f7; }
-
-    .print-btn {
-      position: fixed;
-      top: 38px;
-      right: 22px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--muted);
-      padding: 6px 14px;
-      cursor: pointer;
-      z-index: 99;
-      transition: all 0.2s;
-    }
-
-    .print-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-    .print-btn-compact {
-      position: fixed;
-      top: 64px;
-      right: 22px;
-      font-family: 'DM Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--muted);
-      padding: 6px 14px;
-      cursor: pointer;
-      z-index: 99;
-      transition: all 0.2s;
-    }
-
-    .print-btn-compact:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
-
-    .page {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 70px 44px 60px;
-    }
-
-    header {
-      text-align: center;
-      padding-bottom: 18px;
-      border-bottom: 2px solid var(--text);
-      margin-bottom: 22px;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-family: 'DM Mono', monospace;
-      font-size: 10.5px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .contacts {
-      font-size: 12.5px;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 4px 16px;
-    }
-
-    .contacts a { color: var(--accent); text-decoration: none; }
-    .contacts a:hover { text-decoration: underline; }
-
-    section { margin-bottom: 18px; }
-
-    .section-title {
-      font-family: 'DM Mono', monospace;
-      font-size: 9.5px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 5px;
-      margin-bottom: 12px;
-    }
-
-    .summary p {
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 6px 0;
-      align-items: start;
-    }
-
-    .skill-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 9.5px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 2px;
-    }
-
-    .skill-value { font-size: 14px; }
-
-    .job { margin-bottom: 14px; }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 3px;
-      margin-bottom: 1px;
-    }
-
-    .job-title { font-weight: 700; font-size: 14.5px; }
-
-    .job-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 10.5px;
-      color: var(--muted);
-    }
-
-    .job-company {
-      font-style: italic;
-      color: var(--muted);
-      margin-bottom: 5px;
-      font-size: 13px;
-    }
-
-    .job ul { padding-left: 16px; }
-
-    .job li {
-      margin-bottom: 3px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .job + .job {
-      border-top: 1px dashed var(--border);
-      padding-top: 13px;
-    }
-
-    strong { font-weight: 700; }
-
-    @media print {
-      .lang-bar, .print-btn, .print-btn-compact { display: none !important; }
-      body { background: #fff; }
-      .page { max-width: 100%; }
-    }
-
-    body.print-compact { --print-active: 1; }
-
-    @media print {
-      body.print-compact { font-size: 11.5px; }
-      body.print-compact .page { padding: 9mm 14mm 8mm; }
-      body.print-compact header { margin-bottom: 11px; padding-bottom: 10px; }
-      body.print-compact header h1 { font-size: 1.9rem; }
-      body.print-compact .subtitle { font-size: 9px; margin-bottom: 8px; }
-      body.print-compact .contacts { font-size: 11px; }
-      body.print-compact section { margin-bottom: 11px; }
-      body.print-compact .section-title { font-size: 8.5px; margin-bottom: 8px; padding-bottom: 4px; }
-      body.print-compact .job { margin-bottom: 8px; }
-      body.print-compact .job + .job { padding-top: 8px; }
-      body.print-compact .job-company { margin-bottom: 3px; font-size: 11px; }
-      body.print-compact .job-title { font-size: 12px; }
-      body.print-compact .job-date { font-size: 10px; }
-      body.print-compact .summary p,
-      body.print-compact .skill-value,
-      body.print-compact .job li { font-size: 11px; line-height: 1.5; }
-      body.print-compact .skill-label { font-size: 8.5px; }
-      body.print-compact .skills-grid { gap: 5px 0; grid-template-columns: 120px 1fr; }
-
-      body:not(.print-compact) { font-size: 13px; }
-      body:not(.print-compact) .page { padding: 10mm 16mm 10mm; }
-      body:not(.print-compact) header { margin-bottom: 14px; padding-bottom: 12px; }
-      body:not(.print-compact) header h1 { font-size: 2.2rem; }
-      body:not(.print-compact) .subtitle { font-size: 10px; margin-bottom: 9px; }
-      body:not(.print-compact) .contacts { font-size: 12px; }
-      body:not(.print-compact) section { margin-bottom: 14px; }
-      body:not(.print-compact) .section-title { font-size: 9px; margin-bottom: 9px; padding-bottom: 5px; }
-      body:not(.print-compact) .job { margin-bottom: 11px; page-break-inside: avoid; }
-      body:not(.print-compact) .job + .job { padding-top: 10px; }
-      body:not(.print-compact) .job-company { margin-bottom: 3px; font-size: 12px; }
-      body:not(.print-compact) .job-title { font-size: 13px; }
-      body:not(.print-compact) .job-date { font-size: 10.5px; }
-      body:not(.print-compact) .summary p,
-      body:not(.print-compact) .skill-value,
-      body:not(.print-compact) .job li { font-size: 12px; line-height: 1.6; }
-      body:not(.print-compact) .skill-label { font-size: 9px; }
-      body:not(.print-compact) .skills-grid { gap: 6px 0; grid-template-columns: 130px 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -313,14 +64,14 @@
       <span class="skill-value en-content" style="display:none">Portuguese native · <strong>English B2 (TOEIC 900)</strong></span>
 
       <span class="skill-label" data-pt="Certificações" data-en="Certifications">Certificações</span>
-      <span class="skill-value pt-content"><strong>Técnico em Eletromecânica – SENAI</strong> (Dez/2024) · Cibersegurança – CISCO (6h · Abr/2024) · Inglês – FISK SBO (240h · em andamento)</span>
-      <span class="skill-value en-content" style="display:none"><strong>Electromechanical Technician – SENAI</strong> (Dec/2024) · Cybersecurity – CISCO (6h · Apr/2024) · English – FISK SBO (240h · in progress)</span>
+      <span class="skill-value pt-content"><strong>Técnico em Eletromecânica – SENAI</strong> (Dez/2024)</span>
+      <span class="skill-value en-content" style="display:none"><strong>Electromechanical Technician – SENAI</strong> (Dec/2024)</span>
 
     </div>
   </section>
 
   <section>
-    <div class="section-title" data-pt="Experiência Profissional" data-en="Professional Experience">Experiência Profissional</div>
+    <div class="section-title" data-pt="Experiência &amp; Projetos" data-en="Experience &amp; Projects">Experiência &amp; Projetos</div>
 
     <div class="job">
       <div class="job-header">
@@ -340,13 +91,15 @@
 
     <div class="job">
       <div class="job-header">
-        <span class="job-title" data-pt="Estagiário – Suporte Técnico" data-en="Intern – Technical Support">Estagiário – Suporte Técnico</span>
-        <span class="job-date" data-pt="Abr/2025 – Jul/2025" data-en="Apr/2025 – Jul/2025">Abr/2025 – Jul/2025</span>
+        <span class="job-title" data-pt="Estagiário – Suporte Técnico (PROATI)" data-en="Intern – Technical Support (PROATI)">Estagiário – Suporte Técnico (PROATI)</span>
+        <span class="job-date" data-pt="Mai/2026 – Atual" data-en="May/2026 – Present">Mai/2026 – Atual</span>
       </div>
-      <div class="job-company" data-pt="Control Ponto Tecnologia · TI · Americana, SP" data-en="Control Ponto Tecnologia · IT · Americana, SP">Control Ponto Tecnologia · TI · Americana, SP</div>
+      <div class="job-company" data-pt="E.E. Prof. Ary Menegatto · Educação Pública Estadual · Americana, SP" data-en="E.E. Prof. Ary Menegatto · State Public Education · Americana, SP">E.E. Prof. Ary Menegatto · Educação Pública Estadual · Americana, SP</div>
       <ul>
-        <li class="pt-content"><strong>Diagnóstico e resolução de problemas técnicos</strong> em software e hardware via <strong>acesso remoto</strong>; atendimento a clientes com foco em <strong>comunicação</strong> e agilidade.</li>
-        <li class="en-content" style="display:none"><strong>Technical troubleshooting</strong> for software and hardware via <strong>remote access</strong>; customer service focused on <strong>clear communication</strong> and efficiency.</li>
+        <li class="pt-content"><strong>Suporte técnico</strong> a <strong>rede escolar</strong> com <strong>100+ equipamentos</strong> (notebooks, tablets, TVs): <strong>configuração de notebooks</strong>, <strong>conectividade de tablets</strong> e problemas de <strong>HDMI</strong> nas salas.</li>
+        <li class="en-content" style="display:none"><strong>Technical support</strong> for a <strong>school network</strong> with <strong>100+ devices</strong> (notebooks, tablets, TVs): <strong>notebook setup</strong>, <strong>tablet connectivity</strong>, and <strong>HDMI</strong> issues in classrooms.</li>
+        <li class="pt-content">Suporte a <strong>plataformas educacionais</strong> (<strong>SED</strong>, Sala do Futuro, <strong>CMSP</strong>): login, acesso e suporte a <strong>estudantes e professores</strong>; organização e <strong>controle</strong> dos carrinhos de equipamentos.</li>
+        <li class="en-content" style="display:none">Support for <strong>educational platforms</strong> (<strong>SED</strong>, Sala do Futuro, <strong>CMSP</strong>): logins, access, and help for <strong>students and teachers</strong>; organizing and <strong>tracking</strong> equipment carts.</li>
       </ul>
     </div>
 
@@ -372,44 +125,7 @@
   </section>
 
 </div>
-
-<script>
-  function printNormal() {
-    document.body.classList.remove('print-compact');
-    window.print();
-  }
-
-  function printCompact() {
-    document.body.classList.add('print-compact');
-    window.print();
-    setTimeout(() => document.body.classList.remove('print-compact'), 1000);
-  }
-
-  function setLang(lang) {
-    document.querySelectorAll('[data-pt]').forEach(el => {
-      if (el.children.length === 0) {
-        const val = el.getAttribute('data-' + lang);
-        if (val) el.textContent = val;
-      }
-    });
-    document.querySelectorAll('.pt-content').forEach(el => {
-      el.style.display = lang === 'pt' ? '' : 'none';
-    });
-    document.querySelectorAll('.en-content').forEach(el => {
-      el.style.display = lang === 'en' ? '' : 'none';
-    });
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active',
-        (lang === 'pt' && btn.textContent.includes('Português')) ||
-        (lang === 'en' && btn.textContent.includes('English'))
-      );
-    });
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-    document.title = lang === 'pt'
-      ? 'Lucas Cirino – Técnico em Eletromecânica'
-      : 'Lucas Cirino – Electromechanical Technician';
-  }
-</script>
+  <script src="app.js" defer></script>
 
 </body>
 </html>

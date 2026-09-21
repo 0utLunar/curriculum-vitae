@@ -10,6 +10,10 @@ Currículos profissionais desenvolvidos em HTML puro, com alternância de idioma
 |---|---|
 | `developer.html` | Currículo voltado para **Desenvolvimento de Software** |
 | `eletromechanics.html` | Currículo voltado para **Técnico em Eletromecânica** |
+| `styles.css` | Estilos compartilhados por ambos os currículos |
+| `app.js` | Toggle de idioma e modos de impressão (compartilhado) |
+
+> ⚠️ **Os currículos não são arquivos únicos.** `styles.css` e `app.js` precisam estar ao lado dos `.html`. Para enviar a alguém, mande os 3 arquivos ou use o PDF exportado.
 
 ---
 
@@ -41,9 +45,9 @@ O PDF gerado terá texto copiável, links clicáveis e sem marcações do browse
 
 ## 🛠️ Tecnologias
 
-- HTML5 + CSS3 puro (sem frameworks)
-- JavaScript vanilla para alternância de idioma e modos de print
-- Google Fonts (EB Garamond + DM Mono) para a interface web
+- HTML5 + CSS3 puro (sem frameworks) — estilos em `styles.css`
+- JavaScript vanilla em `app.js` para alternância de idioma e modos de print
+- Google Fonts (EB Garamond + DM Mono) para títulos e interface web
 - Arial/Helvetica no corpo do texto para legibilidade no PDF
 
 ---
