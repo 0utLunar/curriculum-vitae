@@ -2,9 +2,17 @@
 
 Currículos profissionais desenvolvidos em HTML puro, com alternância de idioma (PT/EN), dois modos de exportação para PDF e palavras-chave em negrito para facilitar a leitura de recrutadores.
 
+_Professional résumés built in pure HTML, with PT/EN language toggle, two PDF export modes and bolded keywords to make recruiter skimming easier._
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/vanilla%20JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+![Build](https://img.shields.io/badge/build-none%20%2F%20no%20deps-success?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge)
+
 ---
 
-## 📁 Arquivos
+## 📁 Arquivos — _Files_
 
 | Arquivo | Descrição |
 |---|---|
@@ -17,7 +25,7 @@ Currículos profissionais desenvolvidos em HTML puro, com alternância de idioma
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Funcionalidades — _Features_
 
 - 🇧🇷 / 🇺🇸 **Toggle de idioma** — alterna todo o conteúdo entre Português e Inglês sem recarregar a página
 - ⎙ **PDF Normal** — exporta com fontes maiores, preenchendo a página inteira
@@ -28,7 +36,7 @@ Currículos profissionais desenvolvidos em HTML puro, com alternância de idioma
 
 ---
 
-## 🖨️ Como exportar para PDF com links funcionando
+## 🖨️ Como exportar para PDF com links funcionando — _How to export to PDF with working links_
 
 > ⚠️ **Use o Google Chrome** para garantir que links e texto fiquem funcionais no PDF.
 
@@ -43,7 +51,7 @@ O PDF gerado terá texto copiável, links clicáveis e sem marcações do browse
 
 ---
 
-## 🛠️ Tecnologias
+## 🛠️ Tecnologias — _Technologies_
 
 - HTML5 + CSS3 puro (sem frameworks) — estilos em `styles.css`
 - JavaScript vanilla em `app.js` para alternância de idioma e modos de print
@@ -53,7 +61,7 @@ O PDF gerado terá texto copiável, links clicáveis e sem marcações do browse
 ---
 
 
-## 📌 Observações
+## 📌 Observações — _Notes_
 
 - O email está codificado em HTML (`&#64;`) para evitar ofuscação por proxies como o Cloudflare ao hospedar o arquivo online
 - O toggle de idioma usa classes `.pt-content` / `.en-content` para blocos com formatação rich text (`<strong>`, links etc.), e atributos `data-pt` / `data-en` para textos simples
@@ -61,7 +69,13 @@ O PDF gerado terá texto copiável, links clicáveis e sem marcações do browse
 
 ---
 
-## 👤 Autor
+## 👤 Autor — _Author_
 
 **Lucas Cirino**  
 [linkedin.com/in/lucascir](https://linkedin.com/in/lucascir) · [github.com/0utLunar](https://github.com/0utLunar)
+
+## 📄 Licença — _License_
+
+[MIT](./LICENSE) — Copyright (c) 2026 0utLunar
+
+_MIT — Copyright (c) 2026 0utLunar_
